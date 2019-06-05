@@ -46,21 +46,21 @@ public class UserController {
     @ApiOperation("保存或更新用户信息")
     @GetMapping("saveOrUpdate")
     public Message saveOrUpdate(User user){
-        try {
-            userService.saveOrUpdate(user);
-            return MessageUtil.success("保存成功!");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return MessageUtil.error(e.getMessage());
-        }
+       try {
+           userService.saveOrUpdate(user);
+           return MessageUtil.success("保存成功!");
+       } catch (Exception e) {
+           e.printStackTrace();
+           return MessageUtil.error(e.getMessage());
+       }
     }
 
     @ApiOperation("通过id删除用户信息")
     @GetMapping("deleteById")
     public Message deleteById(@ApiParam(value = "主键",required = true) @RequestParam("id") long id){
         try {
-            userService.deleteById(id);
-            return MessageUtil.success("删除成功!");
+           userService.deleteById(id);
+           return MessageUtil.success("删除成功!");
         } catch (Exception e) {
             e.printStackTrace();
             return MessageUtil.error(e.getMessage());

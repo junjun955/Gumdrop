@@ -9,5 +9,4 @@ public interface CourseMapper {
     List<Course> selectAll();
 
     Course selectByPrimaryKey(long id);
-
 }
